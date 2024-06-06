@@ -19,8 +19,7 @@ spec:
                 - /bin/sh
                 - -c
                 - |
-                  cat <<EOF | oc create -f-
-                  apiVersion: appstudio.redhat.com/v1alpha1
+                  echo 'apiVersion: appstudio.redhat.com/v1alpha1
                   kind: DependencyUpdateCheck
                   metadata:
                     labels:
@@ -30,7 +29,7 @@ spec:
                       app.kubernetes.io/created-by: mintmaker
                     generateName: dependencyupdatecheck-
                   spec:
-                  EOF
+                  ' | oc create -f-
               resources:
                 requests:
                   cpu: 100m
@@ -40,3 +39,4 @@ spec:
                   memory: 100Mi
               securityContext:
                 runAsNonRoot: true
+                readOnlyRootFilesystem: true
