@@ -4,16 +4,12 @@ resources:
   - ../base
   - https://github.com/konflux-ci/mintmaker/config/default?ref=18cdf7c9683f7b3a55145d98f07601e610236cca
   - https://github.com/konflux-ci/mintmaker/config/renovate?ref=18cdf7c9683f7b3a55145d98f07601e610236cca
-
 images:
   - name: quay.io/konflux-ci/mintmaker
     newName: quay.io/redhat-user-workloads/konflux-mintmaker-tenant/mintmaker-refactoring-pipelinerun
     newTag: 574ac670498441755ea0d78c3aa98b78b0982ec5
-
 namespace: mintmaker
-
 commonAnnotations:
   argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
-
 components:
   - ../components/rh-certs
