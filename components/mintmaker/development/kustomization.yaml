@@ -4,16 +4,12 @@ resources:
   - ../base
   - https://github.com/konflux-ci/mintmaker/config/default?ref=483319c06f597a3b2ed7f84d8a6f763e7db90a17
   - https://github.com/konflux-ci/mintmaker/config/renovate?ref=483319c06f597a3b2ed7f84d8a6f763e7db90a17
-
 images:
   - name: quay.io/konflux-ci/mintmaker
-    newName: quay.io/konflux-ci/mintmaker
+    newName: https://quay.io/repository/konflux-ci/mintmaker
     newTag: 17adeaaddd3624cb7afc53976f3962f2cee61032
-
 namespace: mintmaker
-
 commonAnnotations:
   argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
-
 components:
   - ../components/rh-certs
